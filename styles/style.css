@@ -6,9 +6,11 @@ body, html {
 }
 
 body {
+    background: rgb(162, 149, 240);
     display: flex; 
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 h2 {

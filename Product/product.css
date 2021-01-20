@@ -10,6 +10,7 @@ ul {
     text-align: center;
     max-width: 170px;
     max-height: 100%;
+    background-color: pink;
     
 }
 
@@ -23,3 +24,14 @@ ul {
     max-height: 100%;
     
 }
+
+.gutter-right {
+    font-size: 60px;
+    text-align: right;
+    font-family: 'Big Shoulders Inline Text', cursive;
+}
+
+/* .main-section {
+    font-size: 30px;
+    
+} */
