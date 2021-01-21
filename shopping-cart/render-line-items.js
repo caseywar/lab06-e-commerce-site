@@ -8,7 +8,7 @@ export function calcLineItem(cartItem, album) {
 }
 
 export function renderLineItems(cartItem) {
-    const album = findById(cartItem.id, albums)
+    const album = findById(cartItem.id, albums);
 
     const tr = document.createElement('tr');
 
