@@ -1,6 +1,5 @@
-import { albums } from './data.js';
+import { albums } from './albums.js';
 import { renderAlbum } from './render.js';
-console.log(albums);
 
 const list = document.getElementById('list');
 

@@ -42,7 +42,7 @@ export const albums = [
     },
     {
         id: 6,
-        name: 'Morning View',
+        name: 'Morning View ',
         image: 'morning-view.jpg',
         description: 'The fourth studio album by American rock band Incubus',
         category: 'Art Rock',
