@@ -1,6 +1,7 @@
 // IMPORT MODULES under test here:
 import { renderAlbum } from '../Product/render.js';
-import { findById, calcLineItem } from '../shopping-cart/utils.js';
+import { findById } from '../shopping-cart/utils.js';
+import { renderLineItems, calcLineItem } from '../shopping-cart/render-line-items.js';
 
 
 
@@ -127,4 +128,36 @@ test('test should take in a cart item and an album and return a price value', (e
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
+});
+
+
+//test for renderLineItems
+test('test should take both a cart line item, and the corresponding product, and return a dom that matches your static html example ', (expect) => {
+    //Arrange
+
+    const album =
+    {
+        id: 1,
+        name: 'Channel Orange',
+        image: 'channel-orange.jpg',
+        description: 'The debut studio album by American R&B singer and songwriter Frank Ocean',
+        category: 'Alternative R&B',
+        price: 10,
+
+    };
+
+    const cartItem = {
+        id: 1,
+        quantity: 3
+    };
+    // Set up your arguments and expectations
+    const expected = `<tr><td>Channel Orange</td><td>3</td><td>30</td></tr>`;
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderLineItems(cartItem, album);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
 });

@@ -1,14 +1,10 @@
-export const cart = [
-    {
-        id: 1,
-        quantity: 1
-    },
-    {
-        id: 2,
-        quantity: 5
-    },
-    {
-        id: 6,
-        quantity: 2
-    },
-];
+import { cart } from './cart-data.js';
+import { renderLineItems } from './render-line-items.js';
+
+const table = document.querySelector('table');
+for (let item of cart) {
+    const tableRow = renderLineItems(item);
+
+    table.append(tableRow);
+}
+

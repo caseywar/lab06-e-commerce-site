@@ -7,9 +7,3 @@ export function findById(id, array) {
         }
     }
 }
-
-
-export function calcLineItem(cartItem, album) {
-    return cartItem.quantity * album.price;
-
-}
