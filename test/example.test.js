@@ -151,7 +151,7 @@ test('test should take both a cart line item, and the corresponding product, and
         quantity: 3
     };
     // Set up your arguments and expectations
-    const expected = `<tr><td>Channel Orange</td><td>3</td><td>30</td></tr>`;
+    const expected = `<tr><td>Channel Orange</td><td>3</td><td>$30</td></tr>`;
 
     //Act 
     // Call the function you're testing and set the result to a const
