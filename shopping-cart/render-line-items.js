@@ -18,7 +18,7 @@ export function renderLineItems(cartItem) {
 
     nameTd.textContent = album.name;
     quantityTd.textContent = cartItem.quantity;
-    priceTd.textContent = calcLineItem(cartItem, album);
+    priceTd.textContent = `$${calcLineItem(cartItem, album)}`;
 
     tr.append(nameTd, quantityTd, priceTd);
 
