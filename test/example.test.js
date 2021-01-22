@@ -1,7 +1,8 @@
 // IMPORT MODULES under test here:
 import { renderAlbum } from '../Product/render.js';
 import { findById } from '../shopping-cart/utils.js';
-import { renderLineItems, calcLineItem } from '../shopping-cart/render-line-items.js';
+import { renderLineItems, calcLineItem, getCartTotal } from '../shopping-cart/render-line-items.js';
+import { cart } from '../shopping-cart/cart-data.js';
 
 
 
@@ -160,4 +161,20 @@ test('test should take both a cart line item, and the corresponding product, and
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+
+
+
+test('tests getCartTotal function; input is a cart array and output should be a total', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 160;
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = getCartTotal(cart);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
 });

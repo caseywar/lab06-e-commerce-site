@@ -1,7 +1,4 @@
-import { albums } from '../Product/albums.js';
-
-import { renderLineItems } from './render-line-items.js';
-import { findById } from './utils.js';
+import { renderLineItems, getCartTotal } from './render-line-items.js';
 import { getCart } from '../cart-utils.js';
 
 const CART = 'CART';
@@ -12,13 +9,15 @@ const table = document.querySelector('table');
 
 const cart = getCart();
 
-let total = 0;
+let total = getCartTotal(cart);
+
+// let total = 0;
 
 for (let item of cart) {
-    const album = findById(item.id, albums);
-    const totalForThisAlbum = item.quantity * album.price;
+    // const album = findById(item.id, albums);
+    // const totalForThisAlbum = item.quantity * album.price;
 
-    total = total + totalForThisAlbum;
+    // total = total + totalForThisAlbum;
 
     const tableRow = renderLineItems(item);
 

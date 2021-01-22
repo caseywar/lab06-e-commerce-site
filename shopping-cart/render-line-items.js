@@ -2,7 +2,6 @@ import { findById } from './utils.js';
 import { albums } from '../Product/albums.js';
 
 
-
 export function calcLineItem(cartItem, album) {
     return cartItem.quantity * album.price;
 }
@@ -24,4 +23,15 @@ export function renderLineItems(cartItem) {
 
     return tr;
 
+}
+
+export function getCartTotal(cart) {
+    let total = 0;
+    for (let item of cart) {
+        const album = findById(item.id, albums);
+        const totalForThisAlbum = item.quantity * album.price;
+
+        total = total + totalForThisAlbum;
+    }
+    return total;
 }
