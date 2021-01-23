@@ -1,0 +1,16 @@
+table, th, td {
+    width: 100%;
+    background: rgb(231, 231, 108);
+    border-collapse: collapse;
+    border: 1px dotted black;
+    width: 600px;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    /* border-style: dotted; */
+}
+
+.gutter-right {
+    font-size: 60px;
+    font-family: 'Big Shoulders Inline Text', cursive;
+}

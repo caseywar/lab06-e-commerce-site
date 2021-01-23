@@ -5,12 +5,24 @@ body, html {
     margin: 0;
 }
 
+.header-image {
+    background-image: url('http://static.tumblr.com/2c0794f55d8089b775514e04df2fdec4/bkeuqco/Hlqpcpggk/tumblr_static_tumblr_static__focused_v3.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 body {
     background: rgb(162, 149, 240);
     display: flex; 
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+main {
+    background: plum;
+    padding: 40px;
+    border: 10px ridge rgb(223, 223, 140);
 }
 
 h2 {

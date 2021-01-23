@@ -14,8 +14,13 @@ ul {
     
 }
 
+h3 {
+    height: 87px;
+    font-size: 20px;
+}
+
 .album-name {
-    font-size: 30px;
+    font-size: 26px;
 
 }
 
