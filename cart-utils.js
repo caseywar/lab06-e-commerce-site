@@ -2,6 +2,9 @@ const CART = 'CART';
 const defaultEmptyCart = [];
 import { findById } from './shopping-cart/utils.js';
 
+
+
+
 export function getCart() {
     const stringyCart = localStorage.getItem(CART);
 
@@ -23,6 +26,7 @@ export function clearCart() {
     const stringyDefaultCart = JSON.stringify(defaultEmptyCart);
     localStorage.setItem(CART, stringyDefaultCart);
 }
+
 
 export function setCart(cart) {
     const stringyCart = JSON.stringify(cart);

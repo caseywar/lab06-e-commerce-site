@@ -9,3 +9,7 @@ table, th, td {
     font-family: sans-serif;
     /* border-style: dotted; */
 }
+
+.gutter-right {
+    font-size: 60px;
+}

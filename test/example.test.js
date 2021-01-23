@@ -3,12 +3,12 @@ import { renderAlbum } from '../Product/render.js';
 import { findById } from '../shopping-cart/utils.js';
 import { renderLineItems, calcLineItem, getCartTotal } from '../shopping-cart/render-line-items.js';
 import { cart } from '../shopping-cart/cart-data.js';
-
+import { getCart, clearCart, setCart } from '../cart-utils.js';
 
 
 const test = QUnit.test;
 
-test('test should tak in album and return a li', (expect) => {
+test('renderAlbum should tak in album and return a li', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const orange = {
@@ -85,7 +85,7 @@ const albums = [
 
 ];
 
-test('test should take in an array and id and return an object with the same id as the array', (expect) => {
+test('findById should take in an array and id and return an object with the same id as the array', (expect) => {
 
     const expected = {
         id: 3,
@@ -103,7 +103,7 @@ test('test should take in an array and id and return an object with the same id 
 });
 
 
-test('test should take in a cart item and an album and return a price value', (expect) => {
+test('calcLineItem should take in a cart item and an album and return a price value', (expect) => {
 
     const album = {
         id: 3,
@@ -133,7 +133,7 @@ test('test should take in a cart item and an album and return a price value', (e
 
 
 //test for renderLineItems
-test('test should take both a cart line item, and the corresponding product, and return a dom that matches your static html example ', (expect) => {
+test('renderLineItems should take both a cart line item, and the corresponding product, and return a dom that matches your static html example ', (expect) => {
     //Arrange
 
     const album =
@@ -172,9 +172,53 @@ test('tests getCartTotal function; input is a cart array and output should be a 
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = getCartTotal(cart);
+    const actual = getCartTotal(cart, albums);
 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
 });
+
+
+test('getCart should take in the existing cart from local storage and return an array', (expect) => {
+
+    const stringyCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringyCart);
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = cart;
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = getCart();
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+test('clearCart should stringify default cart set into local storage', (expect) => {
+
+    const expected = [];
+
+    clearCart();
+
+
+    const actual = getCart();
+
+
+    expect.deepEqual(actual, expected);
+});
+
+
+test('setCart should stringify whats in the cart and set it to local storage', (expect) => {
+
+    const stringyCart = JSON.stringify(cart);
+    localStorage.setItem('CART', '');
+    const expected = stringyCart;
+    setCart(cart);
+
+    const actual = localStorage.getItem('CART');
+
+    expect.deepEqual(actual, expected);
+}); 
